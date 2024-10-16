@@ -1,0 +1,43 @@
+.svg-container {
+  width: 12em;
+  min-width: 150px;
+ 
+}
+
+.svg-container-game {
+
+ 
+}
+
+.linkYellow:hover {
+  background: #FFB84A;
+}
+
+
+
+.currenttriangle::before {
+  content: '';
+  position: absolute;
+  bottom: 100%; /* Position it above the .current element */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  border-width: 0 8px 8px; /* Define the triangle */
+  border-style: solid;
+  border-color: transparent transparent #FDA214; /* Color the triangle */
+
+}
+
+.current::after {
+  content: "CURRENT PLAYER";
+  position: absolute;
+  top: 110%; /* Position it below the .current element */
+  left: auto;
+  right: auto;
+
+  height: 0;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  
+
+
+
+}
