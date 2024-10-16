@@ -9,14 +9,14 @@ import { nanoid } from 'nanoid'
 
 export default function Game() {
 
-    // Getting the state from the settings page
+   
     const location = useLocation()
 
     const theme : string = location.state.theme
     const players : number = location.state.players
     const gridSize : string = location.state.gridSize
 
-    // Setting the characters that will be used and how many players there will be
+   
     const [characters, setCharacters] = React.useState<{character : string | number, clicked : boolean}[]>([{character: "", clicked: true}])
 
     React.useEffect(() => {
@@ -49,7 +49,7 @@ export default function Game() {
     // Correct Pairs
     const [correctPairs, setCorrectPairs] = React.useState<string[]>([])
 
-    // Logic for when clicking on something on the grid
+    //  grid
     const [currentSelected, setSelected] = React.useState<{character: string | number, clicked: boolean}[]>([])
 
     function changeClick(index : number) {
@@ -64,7 +64,7 @@ export default function Game() {
         })
     }
 
-    // For when two options are selected
+    // two options are selected
     React.useEffect(() => {
         if(currentSelected?.length === 2) {
 
@@ -107,7 +107,7 @@ export default function Game() {
         } 
     }, [currentSelected])
     
-    // Current Player logic (if there are more than one player)
+    // Current Player logic
     const [currentPlayer, setCurrentPlayer] = React.useState< 1 | 2 | 3 | 4  >(1)
     const [playerScores, setPlayerScores] = React.useState<{[key: number]: number;}>
     ({
@@ -168,7 +168,7 @@ export default function Game() {
 
     let greatestScore = finalScoreData.sort((a, b) => b[1] - a[1])[0][1]
 
-    // Code for 1 person games
+    //  1 person game
     const [seconds, setSeconds] = React.useState<number>(0);
     const [moves, setMoves] = React.useState<number>(0);
     const intervalRef = React.useRef<NodeJS.Timeout | null>(null);
@@ -191,7 +191,7 @@ export default function Game() {
         };
     }, [players]);
     
-    // Restarting game
+    // Restarting 
 
     function restartGame() {
         setSeconds(0)
