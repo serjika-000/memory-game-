@@ -117,14 +117,14 @@ export default function Game() {
         4: 0
     })
 
-    // Setting up player cards at the bottom of the page
+    // Setting up player cards 
     let playerElements = []
 
     for (let i = 1; i <= players; i++) {
         playerElements.push(<Player key={nanoid()} player={i} score={playerScores} currentPlayer={currentPlayer} />);
     }
 
-    // Testing for end conditions and determining the winner
+    // Testing winner
     const [endOfGame, setEnd] = React.useState(false)
 
     const endPairs = gridSize === "4x4" ? 8 : 18
